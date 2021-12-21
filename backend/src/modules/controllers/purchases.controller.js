@@ -17,7 +17,7 @@ module.exports.createNewPurchases = (req, res) => {
     });
     purchasesList.save().then(result => {
       res.send(result);
-    }).catch(err => console.log(err));
+    }).catch(err => res.status(500).send(err));
   }
 }
 
@@ -25,9 +25,9 @@ module.exports.deletePurchases = (req, res) => {
   const id = req.query.id;
   if (id) {
     shopingList.deleteOne({ _id: id }).then(result => {
-      res.send("Delete")
+      res.status(200).send({result})
     }).catch(err => {
-      res.send(err);
+      res.status(500).send(err);
     })
   };
 };
@@ -44,11 +44,12 @@ module.exports.changePurchases = (req, res) => {
         purchases: body.purchases,
         sum:body.sum,
       }
-    }).then(result => {
-        res.send({status:200,result})
-      }).catch(err => {
-        res.send(err);});
-
+    })
+    .then(result => {
+      res.status(200).send({result})
+    }).catch(err => {
+      res.status(500).send(err);
+    });
   };
 
 }

@@ -6,7 +6,7 @@ const {
   createNewPurchases,
   changePurchases,
   deletePurchases
-} = require('../controllers/task.controller');
+} = require('../controllers/purchases.controller');
 
 // Tasks routes
 router.get('/allPurchases', getAllPurchases);
