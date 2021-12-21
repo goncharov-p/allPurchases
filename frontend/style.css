@@ -60,7 +60,7 @@ h5{
 }
 
 .sum-card{
-    max-width: 32%;
+    width: 32%;
     text-overflow: ellipsis;
     overflow: hidden;
 }
@@ -123,6 +123,7 @@ margin-right: 12%;
     .main-container{
         width: 96%;
         margin-top: 5%;
+        margin-left: 7%;
     }
 
     .task-container{
@@ -166,6 +167,7 @@ margin-right: 12%;
 
     .sum-card{
         margin-top: 2px;
+        width: max-content;
     }
 
 
@@ -181,6 +183,10 @@ margin-right: 12%;
         height: 34px;
         margin-inline-start: 4%;
         margin-right: 3%;
+    }
+
+    .box-img{
+        margin-left: 15%;
     }
 
 }
